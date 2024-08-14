@@ -3,6 +3,7 @@
 
   <arg name="pub_urdf"  default="false"/>
   <arg name="port_name" default="/dev/pan_tilt"/>
+  <arg name="namespace" default="avatar" />
 
   <node name="pan_tilt_driver" pkg="pan_tilt_driver" type="PanTiltDriverNode" output="screen">
     <param name="ID"                value="1"/>
@@ -12,8 +13,10 @@
   </node>
 
   <group if="$(arg pub_urdf)">
-    <param name="robot_description" command="$(find xacro)/xacro.py $(find pan_tilt_description)/urdf/pan_tilt_st.urdf.xacro"/>
-    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"/>
+    <param name="robot_description" command="$(find xacro)/xacro $(find pan_tilt_description)/urdf/pan_tilt_st.urdf.xacro"/>
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher">
+    <remap from="/joint_states" to="/$(arg namespace)/joint_states" />
+    </node>
   </group>
 
 </launch> 
