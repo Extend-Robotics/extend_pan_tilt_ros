@@ -21,3 +21,7 @@ include_directories(
 	include
   ${catkin_INCLUDE_DIRS}
 )
+
+
+install(DIRECTORY launch DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION})
+install(DIRECTORY config DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION})

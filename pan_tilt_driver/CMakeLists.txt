@@ -46,3 +46,13 @@ add_dependencies(PanTiltDriverNode pan_tilt_msgs_generate_messages_cpp)
 # target_link_libraries(test2
 #   ${catkin_LIBRARIES}
 # )
+
+install(DIRECTORY include DESTINATION ${CATKIN_PACKAGE_INCLUDE_DESTINATION})
+
+install(TARGETS ${PROJECT_NAME} LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION})
+
+install(PROGRAMS nodes/pan_tilt_control.py
+  DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+)
+
+
