@@ -75,8 +75,8 @@ PanTiltDriverNode::PanTiltDriverNode(ros::NodeHandle nh, ros::NodeHandle private
   js_.name[1] = pitchJointName_;
 
   //set publisher
-  jointPub_ = nh_.advertise<sensor_msgs::JointState>("/joint_states", 10);
-  statusPub_ = nh_.advertise<pan_tilt_msgs::PanTiltStatus>("/pan_tilt_status", 10);
+  jointPub_ = nh_.advertise<sensor_msgs::JointState>("joint_states", 10);
+  statusPub_ = nh_.advertise<pan_tilt_msgs::PanTiltStatus>("pan_tilt_status", 10);
 
   //set subscriber
   cmdDegSub_ = nh_.subscribe("pan_tilt_cmd_deg", 10, &PanTiltDriverNode::callBackDeg, this);
