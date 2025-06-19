@@ -1,0 +1,9 @@
+controller_list:
+  - name: fake_head_controller
+    type: $(arg fake_execution_type)
+    joints:
+      - pan_tilt_yaw_joint
+      - pan_tilt_pitch_joint
+initial:  # Define initial robot poses per group
+  - group: head
+    pose: zero

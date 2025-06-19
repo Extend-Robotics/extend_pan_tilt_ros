@@ -1,0 +1,26 @@
+<?xml version="1.0" ?>
+<robot name="avt_head_ind_v1" xmlns:xacro="http://www.ros.org/wiki/xacro" >
+
+<transmission name="head_pan_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="head_pan">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="head_pan_actr">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="head_tilt_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="head_tilt">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="head_tilt_actr">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+</robot>

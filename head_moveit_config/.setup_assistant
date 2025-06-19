@@ -1,0 +1,11 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: avt_head_ind_v1_description
+    relative_path: urdf/avt_head_ind_v1.xacro
+    xacro_args: ""
+  SRDF:
+    relative_path: config/avt_head_ind_v1.srdf
+  CONFIG:
+    author_name: Nitish
+    author_email: nitish@extendrobotics.com
+    generated_timestamp: 1750329199

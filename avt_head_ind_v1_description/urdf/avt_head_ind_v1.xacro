@@ -1,0 +1,250 @@
+<?xml version="1.0" ?>
+<robot name="avt_head_ind_v1" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find avt_head_ind_v1_description)/urdf/materials.xacro" />
+<xacro:include filename="$(find avt_head_ind_v1_description)/urdf/avt_head_ind_v1.trans" />
+<xacro:include filename="$(find avt_head_ind_v1_description)/urdf/avt_head_ind_v1.gazebo" />
+<link name="base_link">
+  <inertial>
+    <origin xyz="-3.009610798673264e-07 -0.010500063457651691 -0.013350268954853266" rpy="0 0 0"/>
+    <mass value="1.2315026586535276"/>
+    <inertia ixx="0.002182" iyy="0.001056" izz="0.002563" ixy="-0.0" iyz="0.000342" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://avt_head_ind_v1_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://avt_head_ind_v1_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+
+<link name="head_pan">
+  <inertial>
+    <origin xyz="0.0033486622953304277 0.00016170130435674834 0.030540410524209916" rpy="0 0 0"/>
+    <mass value="1.7305634465902506"/>
+    <inertia ixx="0.001057" iyy="0.003745" izz="0.003559" ixy="-1.5e-05" iyz="-1.3e-05" ixz="1.7e-05"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.0 0.06 -0.02101" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://avt_head_ind_v1_description/meshes/head_pan.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.0 0.06 -0.02101" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://avt_head_ind_v1_description/meshes/head_pan.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="head_tilt">
+  <inertial>
+    <origin xyz="-0.07940004643477025 4.251860373876565e-05 0.01623183402164488" rpy="0 0 0"/>
+    <mass value="0.4129213981342676"/>
+    <inertia ixx="0.000283" iyy="0.001074" izz="0.001094" ixy="-0.0" iyz="-0.0" ixz="-0.000148"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.064 0.06 -0.09001" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://avt_head_ind_v1_description/meshes/head_tilt.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.064 0.06 -0.09001" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://avt_head_ind_v1_description/meshes/head_tilt.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="avt_head_v2">
+  <inertial>
+    <origin xyz="-2.453268079950184e-06 0.00018417675387515098 0.04667409519918771" rpy="0 0 0"/>
+    <mass value="1.959343903866988"/>
+    <inertia ixx="0.003674" iyy="0.00597" izz="0.005816" ixy="0.0" iyz="0.000681" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.0 0.06 -0.12201" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://avt_head_ind_v1_description/meshes/avt_head_v2.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.0 0.06 -0.12201" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://avt_head_ind_v1_description/meshes/avt_head_v2.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="femto_frame_v2">
+  <inertial>
+    <origin xyz="-6.335905158357663e-06 0.00010593271343117827 -0.0009943213313897137" rpy="0 0 0"/>
+    <mass value="0.00011097676048806423"/>
+    <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="-0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.00203 0.0946 -0.14901" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://avt_head_ind_v1_description/meshes/femto_frame_v2.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+   <origin xyz="-0.00203 0.0946 -0.14901" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://avt_head_ind_v1_description/meshes/femto_frame_v2.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="gemini_head_frame_v2">
+  <inertial>
+    <origin xyz="0.04749999999988658 -0.0119800052904432 0.015104101675612547" rpy="0 0 0"/>
+    <mass value="0.00011097676048806423"/>
+    <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.0 0.092663 -0.193667" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://avt_head_ind_v1_description/meshes/gemini_head_frame_v2.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.0 0.092663 -0.193667" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://avt_head_ind_v1_description/meshes/gemini_head_frame_v2.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="femto_frame_v1">
+  <inertial>
+    <origin xyz="-6.39788786389742e-06 0.00010696903151230508 -0.0010040489080138382" rpy="0 0 0"/>
+    <mass value="0.00011097676048807231"/>
+    <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="-0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.00203 0.14645 -0.14901" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://avt_head_ind_v1_description/meshes/femto_frame_v1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.00203 0.14645 -0.14901" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://avt_head_ind_v1_description/meshes/femto_frame_v1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="head_base">
+  <inertial>
+    <origin xyz="0.00012109625251506097 0.0013089594485845152 0.007614994677166102" rpy="0 0 0"/>
+    <mass value="0.3989981505309856"/>
+    <inertia ixx="0.000211" iyy="0.000393" izz="0.000576" ixy="-2e-06" iyz="-1e-06" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.0 0.06 -0.005" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://avt_head_ind_v1_description/meshes/head_base.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.0 0.06 -0.005" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://avt_head_ind_v1_description/meshes/head_base.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+
+<link name="zedx_frame_v1">
+  <inertial>
+    <origin xyz="-1.501437862927446e-13 1.9724727406966736e-10 -0.0009999998718479564" rpy="0 0 0"/>
+    <mass value="0.00011097676048806388"/>
+    <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.06 0.17 -0.19223" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://avt_head_ind_v1_description/meshes/zedx_frame_v1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.06 0.17 -0.19223" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://avt_head_ind_v1_description/meshes/zedx_frame_v1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="pan_tilt_yaw_joint" type="revolute">
+  <origin xyz="0.0 0.0 0.01601" rpy="0 0 0"/>
+  <parent link="head_base"/>
+  <child link="head_pan"/>
+  <axis xyz="0.0 0.0 1.0"/>
+  <limit upper="1.047198" lower="-1.047198" effort="100" velocity="100"/>
+</joint>
+
+<joint name="pan_tilt_pitch_joint" type="revolute">
+  <origin xyz="0.064 0.0 0.069" rpy="0 0 0"/>
+  <parent link="head_pan"/>
+  <child link="head_tilt"/>
+  <axis xyz="1.0 0.0 0.0"/>
+  <limit upper="1.047198" lower="-1.047198" effort="100" velocity="100"/>
+</joint>
+
+<joint name="head_base_joint" type="fixed">
+  <origin xyz="-0.064 0.0 0.032" rpy="0 0 0"/>
+  <parent link="head_tilt"/>
+  <child link="avt_head_v2"/>
+</joint>
+
+<joint name="femto_frame_v2_joint" type="fixed">
+  <origin xyz="0.00203 -0.0346 0.027" rpy="-0.0063718 0.1061316 -1.570569"/>
+  <parent link="avt_head_v2"/>
+  <child link="femto_frame_v2"/>
+</joint>
+
+<joint name="gemini_frame_v2_joint" type="fixed">
+  <origin xyz="0.0475 -0.042663 0.08576" rpy="0 0 -1.57080"/>
+  <parent link="avt_head_v2"/>
+  <child link="gemini_head_frame_v2"/>
+</joint>
+
+<joint name="femto_frame_v1_joint" type="fixed">
+  <origin xyz="-0.036559 -0.049996 0.027994" rpy="0 0 -1.5708"/>
+  <parent link="avt_head_v2"/>
+  <child link="femto_frame_v1"/>
+</joint>
+
+<joint name="zedx_frame_v1_joint" type="fixed">
+  <origin xyz="0.06 -0.11 0.07322" rpy="0 0 -1.5708"/>
+  <parent link="avt_head_v2"/>
+  <child link="zedx_frame_v1"/>
+</joint>
+
+<joint name="head_base_frame_joint" type="fixed">
+  <origin xyz="0.0 -0.06 0.005" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="head_base"/>
+</joint>
+
+</robot>
