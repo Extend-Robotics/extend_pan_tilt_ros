@@ -61,8 +61,8 @@ def joy_callback(data):
 def main():
   global publisher
   rospy.init_node("pan_tilt_control_node")
-  rospy.Subscriber("joy", Joy, joy_callback)
-  publisher = rospy.Publisher('pan_tilt_cmd_deg', PanTiltCmdDeg, queue_size=10)
+  rospy.Subscriber("joy", Joy, joy_callback, queue_size=1)
+  publisher = rospy.Publisher('pan_tilt_cmd_deg', PanTiltCmdDeg, queue_size=1)
   
   rospy.loginfo("PanTilt Control Start")
   rospy.spin()
